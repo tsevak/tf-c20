@@ -1,0 +1,29 @@
+resource "aws_security_group" "web_ssh_sg" {
+  name        = "web-ssh-sg"
+  description = "Allow web traffic from internet and ssh from myIP"
+}
+
+resource "aws_security_group_rule" "allow_http" {
+  type = "ingress"
+  security_group_id = aws_security_group.web_ssh_sg.id
+    from_port   = var.http_port
+    to_port     = var.http_port
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+}
+resource "aws_security_group_rule" "allow_ssh" {
+type = "ingress" 
+security_group_id = aws_security_group.web_ssh_sg.id
+    from_port   = var.ssh_port
+    to_port     = var.ssh_port
+    protocol    = "tcp"
+    cidr_blocks = [var.myip]
+}
+resource "aws_security_group_rule" "allow_outgoing" {
+ type = "egress"
+ security_group_id = aws_security_group.web_ssh_sg.id
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+}
