@@ -12,7 +12,7 @@ variable "myip" {
 }
 
 variable "ami" {
-  default = "ami-0c1b84cdd84eb5201"
+  default = "ami-0b2045146eb00b617"
 }
 
 variable "instance_type" {
