@@ -1,4 +1,4 @@
-resource "aws_security_group" "web_ssh_sg" {
+resource "aws_security_group" "web_ssh_sgs" {
   name        = "allow_web_ssh"
   description = "Allow web traffic from internet and ssh from myIP"
 
