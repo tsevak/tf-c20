@@ -1,5 +1,5 @@
 resource "aws_security_group" "web_ssh_sgs" {
-  name        = "allow_web_ssh"
+  name        = "allow_web_sshg"
   description = "Allow web traffic from internet and ssh from myIP"
 
   ingress {
