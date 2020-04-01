@@ -2,7 +2,7 @@ resource "aws_instance" "test-instance" {
   ami                    = "ami-0c1b84cdd84eb5201"
   instance_type          = "t2.micro"
   key_name               = "tf-aws"
-  vpc_security_group_ids = ["${aws_security_group.web_ssh_sg.id}"] #Interpolation to place variable value
+  vpc_security_group_ids = [aws_security_group.web_ssh_sg.id] #Interpolation to place variable value
   tags = {
     Name = "webserver-test1"
   }
