@@ -8,7 +8,7 @@ Clone / Download repo from github and set your aws shared credentials
 
 
 ```bash
-git clone https://github.com/tej4pnfr/tf-c20.git
+git clone https://github.com/singymingy/tf-c20.git
 ```
 
 ## Set your aws shared credentials   [aws-shared-credentials](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/create-shared-credentials-file.html)
