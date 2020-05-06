@@ -3,7 +3,7 @@ resource "aws_instance" "test-instance" {
   instance_type = "t2.micro"
   key_name      = "tf-aws"
 
- tags = {
-	 Name = "ec2-test-centos7"
- }
+  tags = {
+    Name = "ec2-test-centos7"
+  }
 }
