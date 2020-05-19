@@ -1,9 +1,21 @@
+
 resource "aws_instance" "test-instance" {
-  ami           = "ami-0b2045146eb00b617"
+  ami           = data.aws_ami.web.id
   instance_type = "t2.micro"
   key_name      = "tf-aws"
 
   tags = {
-    Name = "ec2-test-centos7"
+    Name = "ec2-test-webserver"
+  }
+}
+
+
+data "aws_ami" "web" {
+  most_recent = true
+  owners      = ["self"]
+
+  filter {
+    name   = "name"
+    values = ["packer-webserver-*"]
   }
 }
